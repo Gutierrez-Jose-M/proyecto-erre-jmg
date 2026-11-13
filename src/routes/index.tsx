@@ -1,10 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Apple,
   ArrowRight,
   Coffee,
-  Croissant,
-  Milk,
   ShieldCheck,
   Shirt,
   SprayCan,
@@ -34,10 +31,7 @@ export const Route = createFileRoute("/")({
 
 const categories = [
   { label: "Almacén", Icon: Wheat, to: "/comestibles" },
-  { label: "Lácteos", Icon: Milk, to: "/comestibles" },
-  { label: "Frutas y Verduras", Icon: Apple, to: "/comestibles" },
   { label: "Desayuno", Icon: Coffee, to: "/comestibles" },
-  { label: "Panadería", Icon: Croissant, to: "/comestibles" },
   { label: "Limpieza", Icon: SprayCan, to: "/limpieza" },
   { label: "Lavado", Icon: Shirt, to: "/limpieza" },
   { label: "Higiene", Icon: Sparkles, to: "/limpieza" },
@@ -114,9 +108,9 @@ function Index() {
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl font-extrabold md:text-3xl">Categorías destacadas</h2>
         </div>
-        <ul className="grid grid-cols-4 gap-3 md:grid-cols-8">
+        <ul className="flex flex-wrap justify-center gap-3">
           {categories.map(({ label, Icon, to }) => (
-            <li key={label}>
+            <li key={label} className="w-[calc(25%-0.5625rem)] md:w-[calc(20%-0.6rem)]">
               <Link
                 to={to}
                 className="group flex flex-col items-center gap-2 rounded-2xl p-2 text-center transition-colors hover:bg-secondary"

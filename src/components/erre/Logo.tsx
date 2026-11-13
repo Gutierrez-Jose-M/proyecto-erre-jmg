@@ -13,23 +13,13 @@ export function Logo({ className, inverted = false }: { className?: string; inve
       >
         R
       </span>
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-display text-2xl font-extrabold tracking-tight",
-            inverted ? "text-brand-deep-foreground" : "text-foreground",
-          )}
-        >
-          ERRE
-        </span>
-        <span
-          className={cn(
-            "text-[0.65rem] font-semibold uppercase tracking-[0.18em]",
-            inverted ? "text-brand-deep-foreground/70" : "text-primary",
-          )}
-        >
-          Supermercado
-        </span>
+      <span
+        className={cn(
+          "font-display text-2xl font-extrabold tracking-tight",
+          inverted ? "text-brand-deep-foreground" : "text-foreground",
+        )}
+      >
+        ERRE
       </span>
     </Link>
   );
