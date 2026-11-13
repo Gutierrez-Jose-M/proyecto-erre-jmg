@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarritoRouteImport } from './routes/carrito'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ComestiblesRouteImport } from './routes/comestibles'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as LimpiezaRouteImport } from './routes/limpieza'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NosotrosRouteImport } from './routes/nosotros'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as RegistroRouteImport } from './routes/registro'
+import { Route as ServiciosRouteImport } from './routes/servicios'
+import { Route as ProductoSlugRouteImport } from './routes/producto.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarritoRoute = CarritoRouteImport.update({
+  id: '/carrito',
+  path: '/carrito',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComestiblesRoute = ComestiblesRouteImport.update({
+  id: '/comestibles',
+  path: '/comestibles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LimpiezaRoute = LimpiezaRouteImport.update({
+  id: '/limpieza',
+  path: '/limpieza',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosotrosRoute = NosotrosRouteImport.update({
+  id: '/nosotros',
+  path: '/nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistroRoute = RegistroRouteImport.update({
+  id: '/registro',
+  path: '/registro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosRoute = ServiciosRouteImport.update({
+  id: '/servicios',
+  path: '/servicios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductoSlugRoute = ProductoSlugRouteImport.update({
+  id: '/producto/$slug',
+  path: '/producto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carrito': typeof CarritoRoute
+  '/checkout': typeof CheckoutRoute
+  '/comestibles': typeof ComestiblesRoute
+  '/contacto': typeof ContactoRoute
+  '/limpieza': typeof LimpiezaRoute
+  '/login': typeof LoginRoute
+  '/nosotros': typeof NosotrosRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/servicios': typeof ServiciosRoute
+  '/producto/$slug': typeof ProductoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carrito': typeof CarritoRoute
+  '/checkout': typeof CheckoutRoute
+  '/comestibles': typeof ComestiblesRoute
+  '/contacto': typeof ContactoRoute
+  '/limpieza': typeof LimpiezaRoute
+  '/login': typeof LoginRoute
+  '/nosotros': typeof NosotrosRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/servicios': typeof ServiciosRoute
+  '/producto/$slug': typeof ProductoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carrito': typeof CarritoRoute
+  '/checkout': typeof CheckoutRoute
+  '/comestibles': typeof ComestiblesRoute
+  '/contacto': typeof ContactoRoute
+  '/limpieza': typeof LimpiezaRoute
+  '/login': typeof LoginRoute
+  '/nosotros': typeof NosotrosRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/servicios': typeof ServiciosRoute
+  '/producto/$slug': typeof ProductoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/carrito'
+    | '/checkout'
+    | '/comestibles'
+    | '/contacto'
+    | '/limpieza'
+    | '/login'
+    | '/nosotros'
+    | '/perfil'
+    | '/registro'
+    | '/servicios'
+    | '/producto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/carrito'
+    | '/checkout'
+    | '/comestibles'
+    | '/contacto'
+    | '/limpieza'
+    | '/login'
+    | '/nosotros'
+    | '/perfil'
+    | '/registro'
+    | '/servicios'
+    | '/producto/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/carrito'
+    | '/checkout'
+    | '/comestibles'
+    | '/contacto'
+    | '/limpieza'
+    | '/login'
+    | '/nosotros'
+    | '/perfil'
+    | '/registro'
+    | '/servicios'
+    | '/producto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarritoRoute: typeof CarritoRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ComestiblesRoute: typeof ComestiblesRoute
+  ContactoRoute: typeof ContactoRoute
+  LimpiezaRoute: typeof LimpiezaRoute
+  LoginRoute: typeof LoginRoute
+  NosotrosRoute: typeof NosotrosRoute
+  PerfilRoute: typeof PerfilRoute
+  RegistroRoute: typeof RegistroRoute
+  ServiciosRoute: typeof ServiciosRoute
+  ProductoSlugRoute: typeof ProductoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carrito': {
+      id: '/carrito'
+      path: '/carrito'
+      fullPath: '/carrito'
+      preLoaderRoute: typeof CarritoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comestibles': {
+      id: '/comestibles'
+      path: '/comestibles'
+      fullPath: '/comestibles'
+      preLoaderRoute: typeof ComestiblesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/limpieza': {
+      id: '/limpieza'
+      path: '/limpieza'
+      fullPath: '/limpieza'
+      preLoaderRoute: typeof LimpiezaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nosotros': {
+      id: '/nosotros'
+      path: '/nosotros'
+      fullPath: '/nosotros'
+      preLoaderRoute: typeof NosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registro': {
+      id: '/registro'
+      path: '/registro'
+      fullPath: '/registro'
+      preLoaderRoute: typeof RegistroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios': {
+      id: '/servicios'
+      path: '/servicios'
+      fullPath: '/servicios'
+      preLoaderRoute: typeof ServiciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/producto/$slug': {
+      id: '/producto/$slug'
+      path: '/producto/$slug'
+      fullPath: '/producto/$slug'
+      preLoaderRoute: typeof ProductoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarritoRoute: CarritoRoute,
+  CheckoutRoute: CheckoutRoute,
+  ComestiblesRoute: ComestiblesRoute,
+  ContactoRoute: ContactoRoute,
+  LimpiezaRoute: LimpiezaRoute,
+  LoginRoute: LoginRoute,
+  NosotrosRoute: NosotrosRoute,
+  PerfilRoute: PerfilRoute,
+  RegistroRoute: RegistroRoute,
+  ServiciosRoute: ServiciosRoute,
+  ProductoSlugRoute: ProductoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

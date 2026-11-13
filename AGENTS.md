@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Product catalog lives in `src/data/products.ts` as static data; pages read from it so the site works without a backend.
+- Cart state lives in `src/lib/cart.tsx` (React context persisted to localStorage, read only in effects to avoid hydration mismatches); shipping math stays in `shippingFor` so it is testable.
+- Shared shell (header, nav, footer) is rendered once in `src/routes/__root.tsx`; reusable store pieces live in `src/components/erre/`.
